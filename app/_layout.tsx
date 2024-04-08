@@ -2,7 +2,9 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
+import { NativeBaseProvider } from "native-base";
 import { useEffect } from "react";
+import { theme } from "../constants/theme";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -19,6 +21,10 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    "Body-Regular": require("../assets/fonts/Body-Regular.ttf"),
+    "Body-Bold": require("../assets/fonts/Body-Bold.ttf"),
+    "Heading-Thin": require("../assets/fonts/Heading-Thin.otf"),
+    "Heading-Medium": require("../assets/fonts/Heading-Medium.otf"),
     ...FontAwesome.font,
   });
 
@@ -42,8 +48,10 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-    </Stack>
+    <NativeBaseProvider theme={theme}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      </Stack>
+    </NativeBaseProvider>
   );
 }
