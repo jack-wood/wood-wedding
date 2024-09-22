@@ -2,19 +2,10 @@ import { extendTheme } from "native-base";
 
 export const theme = extendTheme({
   colors: {
-    primary: {
-      50: "#E7EBF8",
-      100: "#D4DAF2",
-      200: "#A5B2E4",
-      300: "#798ED7",
-      400: "#4E69CB",
-      500: "#334EAC",
-      600: "#293E8A",
-      700: "#1E2E66",
-      800: "#141E43",
-      900: "#0A1023",
-      950: "#050710",
-    },
+    lightBlue: "#D0E3FF",
+    midBlue: "#7096D1",
+    royalBlue: "#334EAC",
+    darkBlue: "#091F5C",
     background: "#fff9f0",
   },
   fontConfig: {
@@ -87,13 +78,13 @@ export const theme = extendTheme({
       defaultProps: {
         fontFamily: "body",
         fontWeight: 400,
-        color: "primary.800",
+        color: "royalBlue",
         fontSize: "md",
       },
     },
     Heading: {
       defaultProps: {
-        color: "primary.500",
+        color: "royalBlue",
         size: "xl",
         fontFamily: "heading",
         fontWeight: 500,
@@ -197,24 +188,7 @@ export const theme = extendTheme({
         bg: "gray.200",
       },
     },
-    ModalContent: {
-      baseStyle: {
-        minHeight: 300,
-        position: "absolute",
-        left: 0,
-        bottom: 0,
-        right: 0,
-        borderBottomRadius: 0,
-        borderTopRadius: 30,
-        width: "100%",
-        maxWidth: "100%",
-      },
-      defaultProps: {
-        pt: 2,
-        safeAreaBottom: true,
-        bgColor: "white",
-      },
-    },
+    ModalContent: {},
     ModalHeader: {
       baseStyle: {
         borderBottomWidth: 0,

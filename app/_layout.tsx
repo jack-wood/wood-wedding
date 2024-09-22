@@ -1,10 +1,14 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { NativeBaseProvider } from "native-base";
 import { useEffect } from "react";
 import { theme } from "../constants/theme";
+import { PartyProvider } from "../context/PartyContext";
+import { removeCurrentParty } from "../data/currentParty";
+import { RSVPProvider } from "../context/RSVPContext";
+import { removeRSVP } from "../data/rsvp";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -12,8 +16,7 @@ export {
 } from "expo-router";
 
 export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: "(tabs)",
+  initialRouteName: "welcome",
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -28,6 +31,16 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
+  useEffect(() => {
+    const clear = async () => {
+      await removeCurrentParty();
+      await removeRSVP();
+    };
+
+    // TODO - Remove
+    clear();
+  }, []);
+
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
@@ -35,7 +48,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync();
+      // SplashScreen.hideAsync();
     }
   }, [loaded]);
 
@@ -43,15 +56,13 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
-}
-
-function RootLayoutNav() {
   return (
     <NativeBaseProvider theme={theme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
+      <PartyProvider>
+        <RSVPProvider>
+          <Slot />
+        </RSVPProvider>
+      </PartyProvider>
     </NativeBaseProvider>
   );
 }
