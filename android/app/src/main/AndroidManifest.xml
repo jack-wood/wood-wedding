@@ -24,8 +24,6 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="wood-wedding"/>
-        <data android:scheme="com.jack.woodwedding"/>
         <data android:scheme="the-wood-wedding"/>
         <data android:scheme="com.jack.wood.thewoodwedding"/>
       </intent-filter>
