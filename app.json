@@ -14,10 +14,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "buildNumber": "10",
       "supportsTablet": true,
       "bundleIdentifier": "com.jack.wood.thewoodwedding"
     },
     "android": {
+      "versionCode": 10,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appIconAdaptive.png",
         "backgroundColor": "#fff9f0"

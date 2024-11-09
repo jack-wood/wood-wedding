@@ -32,6 +32,7 @@ export const PartyProvider = ({ children }: PartyProviderProps) => {
   useEffect(() => {
     const getCurrentParty = async () => {
       const storedParty = await getOfflineCurrentParty();
+      console.log("getCurrentParty:", storedParty);
 
       _setCurrentParty(storedParty);
       setIsLoading(false);
@@ -43,6 +44,7 @@ export const PartyProvider = ({ children }: PartyProviderProps) => {
   // useProtectedRoute(currentParty);
 
   const setCurrentParty = async (party: Party | null) => {
+    console.log("setCurrentParty:", party);
     if (party) {
       await storeCurrentParty(party);
     } else {
