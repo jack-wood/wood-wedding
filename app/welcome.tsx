@@ -28,9 +28,6 @@ export default function Welcome() {
   const [continuePressed, setContinuePressed] = useState(false);
   const [selectedParty, setSelectedParty] = useState<Party>();
 
-  const { setRSVP } = useRSVP();
-  console.log("setRSVP:", setRSVP);
-
   const { setCurrentParty, currentParty } = useParty();
 
   const onContinue = () => {

@@ -200,13 +200,13 @@ export const parties: Party[] = [
         id: 19,
         name: "Tom",
         role: "Jack's Friend",
-        picture: require("../assets/guests/tom.png"),
+        picture: require("../assets/guests/tom.jpg"),
       },
       {
         id: 20,
         name: "Katey",
         role: "Tom's Wife",
-        picture: require("../assets/guests/katey.png"),
+        picture: require("../assets/guests/katey.jpg"),
       },
       {
         id: 21,

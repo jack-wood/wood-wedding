@@ -8,6 +8,7 @@ interface Props {
   children: React.ReactNode;
   backgroundColor: string;
   foregroundColor: string;
+  defaultOpen?: boolean;
 }
 
 const CollapsibleSection = ({
@@ -15,8 +16,9 @@ const CollapsibleSection = ({
   backgroundColor,
   foregroundColor,
   children,
+  defaultOpen,
 }: Props) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen || false);
 
   const theme = useTheme();
 
@@ -28,7 +30,9 @@ const CollapsibleSection = ({
       >
         <Box bgColor={backgroundColor} py={4} pl={4} pr={2}>
           <HStack flex={1} justifyContent="space-between" alignItems="center">
-            <Heading color={foregroundColor}>{title}</Heading>
+            <Heading color={foregroundColor} fontSize="2xl">
+              {title}
+            </Heading>
             <Icon
               size="3xl"
               color={foregroundColor}

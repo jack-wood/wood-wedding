@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "wood-wedding",
+    "name": "The Wood Wedding",
     "slug": "the-wood-wedding",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/appIcon.png",
     "userInterfaceStyle": "light",
     "scheme": "the-wood-wedding",
     "splash": {
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/appIconAdaptive.png",
         "backgroundColor": "#fff9f0"
       },
       "package": "com.jack.wood.thewoodwedding"

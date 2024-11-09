@@ -1,25 +1,15 @@
 import {
   Box,
-  Button,
-  Card,
-  Divider,
   HStack,
   Heading,
   Icon,
   Image,
-  Modal,
   ScrollView,
   StatusBar,
-  Switch,
   Text,
   useTheme,
 } from "native-base";
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { TouchableHighlight, useWindowDimensions, Modal } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import dayjs from "dayjs";
@@ -157,7 +147,7 @@ export default function TabOneScreen() {
         </ScrollView>
       </Box>
       {showRSVP ? (
-        <Modal isOpen={true}>
+        <Modal presentationStyle="fullScreen" statusBarTranslucent={true}>
           <RSVPModal
             party={currentParty as Party}
             setRSVP={setRSVP}
