@@ -260,7 +260,7 @@ export const parties: Party[] = [
       },
       {
         id: 27,
-        name: "Baby Kirke",
+        name: "Foy",
         role: "Anna & Jamie's Baby",
         picture: require("../assets/guests/jackjack.png"),
       },

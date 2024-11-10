@@ -14,22 +14,35 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "buildNumber": "10",
+      "buildNumber": "12",
       "supportsTablet": true,
       "bundleIdentifier": "com.jack.wood.thewoodwedding"
     },
     "android": {
-      "versionCode": 10,
+      "versionCode": 12,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appIconAdaptive.png",
         "backgroundColor": "#fff9f0"
       },
-      "package": "com.jack.wood.thewoodwedding"
+      "package": "com.jack.wood.thewoodwedding",
+      "softwareKeyboardLayoutMode": "pan"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": ["expo-router", "expo-secure-store"],
+    "plugins": [
+      "expo-router",
+      [
+        "@sentry/react-native/expo",
+        {
+          "organization": "wood-software-ltd",
+          "project": "the-wood-wedding",
+          // If you are using a self-hosted instance, update the value of the url property
+          // to point towards your self-hosted instance. For example, https://self-hosted.example.com/.
+          "url": "https://sentry.io/"
+        }
+      ]
+    ],
     "extra": {
       "router": {
         "origin": false

@@ -1,11 +1,12 @@
-import * as SecureStore from "expo-secure-store";
-import { MainGuest, Party } from "../constants/guests";
+import { Party } from "../constants/guests";
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const CURRENT_PARTY_KEY = "current_party";
 
 export const storeCurrentParty = async (party: Party) => {
   try {
-    await SecureStore.setItemAsync(CURRENT_PARTY_KEY, JSON.stringify(party));
+    await AsyncStorage.setItem(CURRENT_PARTY_KEY, JSON.stringify(party));
   } catch (e) {
     // save error
   }
@@ -13,7 +14,7 @@ export const storeCurrentParty = async (party: Party) => {
 
 export const getOfflineCurrentParty = async () => {
   try {
-    const result = await SecureStore.getItemAsync(CURRENT_PARTY_KEY);
+    const result = await AsyncStorage.getItem(CURRENT_PARTY_KEY);
 
     if (result) {
       return JSON.parse(result) as Party;
@@ -27,7 +28,7 @@ export const getOfflineCurrentParty = async () => {
 
 export const removeCurrentParty = async () => {
   try {
-    await SecureStore.deleteItemAsync(CURRENT_PARTY_KEY);
+    await AsyncStorage.removeItem(CURRENT_PARTY_KEY);
   } catch (e) {
     // save error
   }

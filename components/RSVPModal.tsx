@@ -1,25 +1,25 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Box,
   Button,
-  Divider,
   HStack,
   Heading,
   Icon,
   Image,
+  Input,
   ScrollView,
   Spinner,
   Text,
   useTheme,
 } from "native-base";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Guest, MainGuest, Party } from "../constants/guests";
+import { Guest, Party } from "../constants/guests";
 import { RSVPGuest, TRSVPGuest } from "./RSVPGuest";
 import { TouchableHighlight } from "react-native";
 
 import { send, EmailJSResponseStatus } from "@emailjs/react-native";
-import { RSVP, getRSVP, storeRSVP } from "../data/rsvp";
-import { useRSVP } from "../context/RSVPContext";
+import { RSVP } from "../data/rsvp";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 interface Props {
   party: Party;
@@ -36,15 +36,13 @@ export enum DayOfArrival {
 const RSVPModal = ({ party, setRSVP, rsvp, close }: Props) => {
   const theme = useTheme();
   const [rsvps, setRSVPs] = useState<TRSVPGuest[]>([]);
-
-  const [dayOfArrival, setDayOfArrive] = useState<DayOfArrival | null>(null);
-
   const [sending, setSending] = useState(false);
+
+  const [songSuggestions, setSongSuggestions] = useState("");
 
   const setInitRSVPs = async () => {
     if (rsvp) {
       setRSVPs(rsvp.rsvps);
-      setDayOfArrive(rsvp.dayOfArrival);
     } else {
       const guestRSVPs: TRSVPGuest[] = party.guests.map((g) => ({
         id: g.id,
@@ -64,14 +62,16 @@ const RSVPModal = ({ party, setRSVP, rsvp, close }: Props) => {
   }, [party]);
 
   const complete = useMemo(() => {
-    if (dayOfArrival === null) return false;
+    let complete = true;
 
     rsvps.forEach((rsvp) => {
-      if (rsvp.attending === null) return false;
+      console.log("rsvp:", rsvp);
+      if (rsvp.attending === null) complete = false;
     });
 
-    return true;
-  }, [dayOfArrival, rsvps]);
+    console.log("return complete:", complete);
+    return complete;
+  }, [rsvps]);
 
   const onComplete = async () => {
     setSending(true);
@@ -79,7 +79,7 @@ const RSVPModal = ({ party, setRSVP, rsvp, close }: Props) => {
       const rsvpData: RSVP = {
         partyId: party.id,
         rsvps,
-        dayOfArrival,
+        songSuggestions,
       };
 
       await send(
@@ -111,7 +111,7 @@ const RSVPModal = ({ party, setRSVP, rsvp, close }: Props) => {
       height="100%"
       backgroundColor="background"
     >
-      <ScrollView flex={1} overflow="hidden">
+      <KeyboardAwareScrollView enableOnAndroid={true}>
         <Button
           position="absolute"
           variant="ghost"
@@ -164,66 +164,24 @@ const RSVPModal = ({ party, setRSVP, rsvp, close }: Props) => {
             </Box>
           ))}
         </Box>
-        <Heading mx={4} mb={2} fontSize="2xl">
-          Day of Arrival*
-        </Heading>
-        <HStack
-          mx={4}
-          mb={2}
-          alignItems="center"
-          borderWidth={1}
-          borderRadius={8}
-          borderColor="royalBlue"
-          height="50px"
-        >
-          <Button
-            onPress={() => setDayOfArrive(DayOfArrival.Friday)}
-            backgroundColor={
-              dayOfArrival === DayOfArrival.Friday ? "darkBlue" : "transparent"
-            }
-            h="50px"
-            _text={{
-              color:
-                dayOfArrival === DayOfArrival.Friday ? "white" : "royalBlue",
-            }}
-            flex={1}
-            borderTopRightRadius={0}
-            borderBottomRightRadius={0}
-          >
-            Friday
-          </Button>
-          <Button
-            backgroundColor={
-              dayOfArrival === DayOfArrival.Saturday
-                ? "darkBlue"
-                : "transparent"
-            }
-            _text={{
-              color:
-                dayOfArrival === DayOfArrival.Saturday ? "white" : "royalBlue",
-            }}
-            colorScheme="primary"
-            onPress={() => setDayOfArrive(DayOfArrival.Saturday)}
-            flex={1}
-            h="50px"
-            borderTopLeftRadius={0}
-            borderBottomLeftRadius={0}
-          >
-            Saturday
-          </Button>
-        </HStack>
-        {dayOfArrival === DayOfArrival.Friday ? (
-          <Text color="royalBlue" fontSize="sm" mx={4}>
-            *Please arrive from 3pm
-          </Text>
-        ) : null}
-        {dayOfArrival === DayOfArrival.Saturday ? (
-          <Text color="royalBlue" fontSize="sm" mx={4}>
-            *Please arrive by 11am
-          </Text>
-        ) : null}
-        <Box h="180px" />
-      </ScrollView>
+        <Box px={4}>
+          <Heading fontSize="2xl" mb={4}>
+            Song Suggestions
+          </Heading>
+          <Input
+            value={songSuggestions}
+            placeholder="Enter songs here..."
+            multiline={true}
+            height="100px"
+            bgColor="white"
+            textAlignVertical="top"
+            onChangeText={(text) => setSongSuggestions(text)}
+            type="text"
+            _focus={{ borderColor: "royalBlue" }}
+          />
+        </Box>
+        <Box h="500px" />
+      </KeyboardAwareScrollView>
       {complete ? (
         <Box
           bgColor={sending ? "royalBlue" : "darkBlue"}

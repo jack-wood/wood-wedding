@@ -68,7 +68,7 @@ export default function ItineraryScreen() {
                       <Box
                         w="3px"
                         bgColor="royalBlue"
-                        height="111%"
+                        height="120%"
                         mt={2}
                         mr={4}
                       />
@@ -77,9 +77,7 @@ export default function ItineraryScreen() {
                           3:00 pm: Check-in
                         </Text>
                         <Text color="royalBlue" lineHeight={22}>
-                          If you would like to help us with setting up the day
-                          before, first of all thank you!{"\n\n"}Feel free to
-                          arrive from 3:00pm to check into your riverside cabin.
+                          Arrive from 3:00pm to check into your riverside cabin.
                           Please see the{" "}
                           <Link href="/venue">
                             <Text
@@ -110,7 +108,7 @@ export default function ItineraryScreen() {
                         </Text>
                         <Text color="royalBlue" lineHeight={22}>
                           Once you have settled in, feel free to give us a hand
-                          with ther preperations for our wedding. Please note
+                          with the preperations for our wedding. Please note
                           that this day will be self catered.
                         </Text>
                       </Box>
@@ -300,7 +298,7 @@ export default function ItineraryScreen() {
                       </Text>
                       <Text color="royalBlue" lineHeight={22}>
                         Kayak on the river, soak in your private hot tub or
-                        explore glourious Shropshire, the day is yours.
+                        explore glorious Shropshire, the day is yours.
                       </Text>
                     </Box>
                   </HStack>

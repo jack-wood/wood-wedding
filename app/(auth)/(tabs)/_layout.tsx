@@ -3,6 +3,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Tabs } from "expo-router";
 import { Box, Image, useTheme } from "native-base";
 import { RSVPProvider } from "../../../context/RSVPContext";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -14,6 +15,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const theme = useTheme();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tabs
@@ -23,7 +25,7 @@ export default function TabLayout() {
           backgroundColor: theme.colors.white,
           borderTopWidth: 0,
           shadowRadius: 0,
-          height: 75,
+          height: 75 + insets.bottom,
         },
         tabBarActiveTintColor: theme.colors.royalBlue,
         tabBarInactiveTintColor: theme.colors.lightBlue,

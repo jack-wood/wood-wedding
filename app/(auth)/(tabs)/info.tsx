@@ -54,6 +54,22 @@ export default function InfoScreen() {
               </Heading>
               <Box mx={-4}>
                 <CollapsibleSection
+                  title="When is check-in/out?"
+                  foregroundColor="white"
+                  backgroundColor="darkBlue"
+                >
+                  <Box px={6} pt={4} backgroundColor="background">
+                    <Text color="royalBlue" mb={4} lineHeight={22}>
+                      Check-in is from 3pm on Friday 23rd May and check-out is
+                      at 10am Monday 26th May.{"\n\n"}We'd really appreciate you
+                      spending the whole time with us, however, if this does not
+                      work for you please let us know as soon as you can.
+                    </Text>
+                  </Box>
+                </CollapsibleSection>
+              </Box>
+              <Box mx={-4}>
+                <CollapsibleSection
                   title="What should I wear?"
                   foregroundColor="royalBlue"
                   backgroundColor="lightBlue"
@@ -110,8 +126,8 @@ export default function InfoScreen() {
                 >
                   <Box px={6} pt={4} backgroundColor="background">
                     <Text color="royalBlue" mb={4} lineHeight={22}>
-                      Whilst we love your pets and our venue is dog-friendly, we
-                      kindly ask that you please do not bring your dog.
+                      Whilst we love your pets, we kindly ask that you please do
+                      not bring your dog.
                     </Text>
                   </Box>
                 </CollapsibleSection>
@@ -158,9 +174,9 @@ export default function InfoScreen() {
                     <Text color="royalBlue" mb={4} lineHeight={22}>
                       As our venue isn't an official wedding venue, we are doing
                       everything ourselves from setting it all up to tidying it
-                      all away, cooking meals and serving drinks. We would
-                      massively appreciate it if everybody contributed where
-                      they can. Report to Lottie for your task!
+                      all away, cooking meals and serving drinks.{"\n\n"}We
+                      would massively appreciate it if everybody contributed
+                      where they can. Report to Lottie for your task!
                     </Text>
                   </Box>
                 </CollapsibleSection>
@@ -173,8 +189,8 @@ export default function InfoScreen() {
                 >
                   <Box px={6} pt={4} backgroundColor="background">
                     <Text color="royalBlue" mb={4} lineHeight={22}>
-                      Here's a list of things we think you should bring:{"\n\n"}
-                      - Wedding Day outfit
+                      Here's a few of the things we think you should bring:
+                      {"\n\n"}- Wedding Day outfit
                       {"\n"}- Comfortable clothes and footwear
                       {"\n"}- Swimwear & spare towel
                       {"\n"}- Food & drinks
@@ -222,108 +238,5 @@ export default function InfoScreen() {
         </ScrollView>
       </Box>
     </>
-  );
-
-  return (
-    <Box safeAreaTop bgColor="primary.700" flex={1}>
-      <ScrollView>
-        <Heading color="white" fontSize="6xl" mb={2} mx={4}>
-          FAQs
-        </Heading>
-        <CollapsibleSection
-          title="What should I wear?"
-          foregroundColor="primary.500"
-          backgroundColor="background"
-        >
-          <Box px={6} backgroundColor="background">
-            <Divider backgroundColor="primary.300" mb={4} />
-            <Text color="primary.500" mb={4}>
-              We all like to get dressed up, however, as we will be outdoors we
-              want people to also be comfortable. For the wedding day, think
-              smart casual garden party. Meaning trousers and shirts for the
-              lads and summer dresses, jumpsuits etc for the ladies. For the
-              rest of the weekend wear whatever you like, even hot tub speedos.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <CollapsibleSection
-          title="What's on the menu?"
-          foregroundColor="white"
-          backgroundColor="primary.500"
-        >
-          <Box px={6} backgroundColor="primary.500">
-            <Divider backgroundColor="primary.200" mb={4} />
-            <Text color="white" mb={4}>
-              We all like to get dressed up, however, as we will be outdoors we
-              want people to also be comfortable. For the wedding day, think
-              smart casual garden party. Meaning trousers and shirts for the
-              lads and summer dresses, jumpsuits etc for the ladies. For the
-              rest of the weekend wear whatever you like, even hot tub speedos.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <CollapsibleSection
-          title="What about booze?"
-          foregroundColor="primary.500"
-          backgroundColor="primary.50"
-        >
-          <Box px={6} backgroundColor="primary.50">
-            <Divider backgroundColor="primary.300" mb={4} />
-            <Text color="primary.500" mb={4}>
-              We all like to get dressed up, however, as we will be outdoors we
-              want people to also be comfortable. For the wedding day, think
-              smart casual garden party. Meaning trousers and shirts for the
-              lads and summer dresses, jumpsuits etc for the ladies. For the
-              rest of the weekend wear whatever you like, even hot tub speedos.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <CollapsibleSection
-          title="How can I help?"
-          foregroundColor="white"
-          backgroundColor="primary.700"
-        >
-          <Box px={6} backgroundColor="primary.700">
-            <Divider backgroundColor="primary.200" mb={4} />
-            <Text color="white" mb={4}>
-              We all like to get dressed up, however, as we will be outdoors we
-              want people to also be comfortable. For the wedding day, think
-              smart casual garden party. Meaning trousers and shirts for the
-              lads and summer dresses, jumpsuits etc for the ladies. For the
-              rest of the weekend wear whatever you like, even hot tub speedos.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <CollapsibleSection
-          title="Is there a gift registry?"
-          foregroundColor="primary.500"
-          backgroundColor="background"
-        >
-          <Box px={6} backgroundColor="background">
-            <Divider backgroundColor="primary.300" mb={4} />
-            <Text color="primary.500" mb={4}>
-              We all like to get dressed up, however, as we will be outdoors we
-              want people to also be comfortable. For the wedding day, think
-              smart casual garden party. Meaning trousers and shirts for the
-              lads and summer dresses, jumpsuits etc for the ladies. For the
-              rest of the weekend wear whatever you like, even hot tub speedos.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <CollapsibleSection
-          title="Can I bring my dog?"
-          foregroundColor="white"
-          backgroundColor="primary.500"
-        >
-          <Box px={6} backgroundColor="primary.500">
-            <Divider backgroundColor="white" mb={4} />
-            <Text color="white" mb={4}>
-              No.
-            </Text>
-          </Box>
-        </CollapsibleSection>
-        <Box h="100px" />
-      </ScrollView>
-    </Box>
   );
 }
