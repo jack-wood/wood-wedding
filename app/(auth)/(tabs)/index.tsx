@@ -88,7 +88,7 @@ export default function TabOneScreen() {
                   </Heading>
                   <Text color="royalBlue">
                     {dayjs("2025-05-24").diff(dayjs(), "days")} days remaining
-                    untill the big day.
+                    until the big day.
                   </Text>
                 </Box>
               </Box>

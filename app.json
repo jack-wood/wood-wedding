@@ -14,18 +14,20 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "buildNumber": "12",
+      "buildNumber": "13",
       "supportsTablet": true,
-      "bundleIdentifier": "com.jack.wood.thewoodwedding"
+      "bundleIdentifier": "com.jack.wood.thewoodwedding",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
-      "versionCode": 12,
+      "versionCode": 13,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appIconAdaptive.png",
         "backgroundColor": "#fff9f0"
       },
       "package": "com.jack.wood.thewoodwedding",
-      "softwareKeyboardLayoutMode": "pan"
+      "softwareKeyboardLayoutMode": "pan",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"

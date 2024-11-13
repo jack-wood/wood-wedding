@@ -1,12 +1,4 @@
-import {
-  Box,
-  Divider,
-  Heading,
-  Image,
-  ScrollView,
-  StatusBar,
-  Text,
-} from "native-base";
+import { Box, Heading, Image, ScrollView, StatusBar, Text } from "native-base";
 import CollapsibleSection from "../../../components/CollapsibleSection";
 import { useWindowDimensions } from "react-native";
 

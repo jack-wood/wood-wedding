@@ -5,7 +5,6 @@ import {
   removeCurrentParty,
   storeCurrentParty,
 } from "../data/currentParty";
-import { useRouter, useSegments } from "expo-router";
 
 export interface PartyContext {
   currentParty: Party | null | undefined;

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "124806949910",
+    "project_id": "the-wood-wedding-e4408",
+    "storage_bucket": "the-wood-wedding-e4408.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124806949910:android:d8e7314903c383b58c9937",
+        "android_client_info": {
+          "package_name": "com.jack.wood.thewoodwedding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrJy18pHD4Q1eNwZQ4ukuPSUcjGz0P0n4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
