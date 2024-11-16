@@ -7,7 +7,6 @@ import {
   Icon,
   Image,
   ScrollView,
-  StatusBar,
   Text,
   useTheme,
 } from "native-base";
@@ -20,8 +19,12 @@ import {
   Modal,
 } from "react-native";
 import { useParty } from "../../../context/PartyContext";
-import { useEffect, useState } from "react";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useState } from "react";
+import {
+  SafeAreaView,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 import ImageZoom from "react-native-image-pan-zoom";
 
@@ -47,7 +50,7 @@ export default function VenueScreen() {
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar style="light" translucent={true} />
       <Box bgColor="background" flex={1}>
         <ScrollView>
           <Box position="relative">
@@ -189,39 +192,41 @@ export default function VenueScreen() {
       </Box>
       {sitemap ? (
         <Modal presentationStyle="fullScreen" statusBarTranslucent={true}>
-          <Box backgroundColor="background" flex={1} safeAreaTop pt={6}>
-            <ImageZoom
-              cropWidth={Dimensions.get("window").width}
-              cropHeight={Dimensions.get("window").height}
-              imageWidth={Dimensions.get("window").width}
-              imageHeight={Dimensions.get("window").height}
-            >
-              <Image
-                alt="sitemap"
-                source={require("../../../assets/sitemap.png")}
-                height={Dimensions.get("window").height}
-                resizeMode="contain"
-              />
-            </ImageZoom>
-            <Button
-              position="absolute"
-              onPress={() => setSiteMap(false)}
-              alignSelf="flex-start"
-              top={insets.top + "px"}
-              background="white"
-              left={4}
-              hitSlop={{ top: 40, bottom: 40, left: 40, right: 40 }}
-            >
-              <HStack alignItems="center">
-                <Icon
-                  color="royalBlue"
-                  as={<MaterialCommunityIcons name="chevron-left" />}
+          <Box flex={1} bgColor="darkBlue" safeAreaTop>
+            <Box backgroundColor="background" flex={1} safeAreaTop pt={4}>
+              <ImageZoom
+                cropWidth={Dimensions.get("window").width}
+                cropHeight={Dimensions.get("window").height}
+                imageWidth={Dimensions.get("window").width}
+                imageHeight={Dimensions.get("window").height}
+              >
+                <Image
+                  alt="sitemap"
+                  source={require("../../../assets/sitemap.png")}
+                  height={Dimensions.get("window").height}
+                  resizeMode="contain"
                 />
-                <Text color="royalBlue" mr="2" fontSize="lg">
-                  Back
-                </Text>
-              </HStack>
-            </Button>
+              </ImageZoom>
+              <Button
+                position="absolute"
+                onPress={() => setSiteMap(false)}
+                alignSelf="flex-start"
+                top={4}
+                background="darkBlue"
+                left={4}
+                hitSlop={{ top: 40, bottom: 40, left: 40, right: 40 }}
+              >
+                <HStack alignItems="center">
+                  <Icon
+                    color="white"
+                    as={<MaterialCommunityIcons name="chevron-left" />}
+                  />
+                  <Text color="white" mr="2" fontSize="lg">
+                    Back
+                  </Text>
+                </HStack>
+              </Button>
+            </Box>
           </Box>
         </Modal>
       ) : null}

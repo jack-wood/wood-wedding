@@ -30,16 +30,6 @@ function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // useEffect(() => {
-  //   const clear = async () => {
-  //     await removeCurrentParty();
-  //     await removeRSVP();
-  //   };
-
-  //   // TODO - Remove
-  //   clear();
-  // }, []);
-
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;

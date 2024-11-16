@@ -1,13 +1,14 @@
-import { Box, Heading, Image, ScrollView, StatusBar, Text } from "native-base";
+import { Box, Heading, Image, ScrollView, Text } from "native-base";
 import CollapsibleSection from "../../../components/CollapsibleSection";
 import { useWindowDimensions } from "react-native";
+import { StatusBar } from "expo-status-bar";
 
 export default function InfoScreen() {
   const { width, height } = useWindowDimensions();
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar style="light" translucent={true} />
       <Box bgColor="background" flex={1}>
         <ScrollView>
           <Box position="relative">

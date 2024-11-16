@@ -5,12 +5,12 @@ import {
   Icon,
   Image,
   ScrollView,
-  StatusBar,
   Text,
   useTheme,
 } from "native-base";
 import { TouchableHighlight, useWindowDimensions, Modal } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
 
 import dayjs from "dayjs";
 
@@ -41,7 +41,7 @@ export default function TabOneScreen() {
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar style="light" translucent={true} />
       <Box bgColor="background" flex={1}>
         <ScrollView>
           <Box position="relative">

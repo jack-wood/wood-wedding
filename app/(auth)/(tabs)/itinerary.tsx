@@ -4,12 +4,12 @@ import {
   Heading,
   Image,
   ScrollView,
-  StatusBar,
   Text,
   useTheme,
 } from "native-base";
 import { useWindowDimensions } from "react-native";
 import CollapsibleSection from "../../../components/CollapsibleSection";
+import { StatusBar } from "expo-status-bar";
 
 import { Link } from "expo-router";
 
@@ -19,7 +19,7 @@ export default function ItineraryScreen() {
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar style="light" translucent={true} />
       <Box bgColor="background" flex={1}>
         <ScrollView>
           <Box position="relative">
