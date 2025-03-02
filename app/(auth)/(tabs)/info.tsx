@@ -2,6 +2,7 @@ import { Box, Heading, Image, ScrollView, Text } from "native-base";
 import CollapsibleSection from "../../../components/CollapsibleSection";
 import { useWindowDimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import React from "react";
 
 export default function InfoScreen() {
   const { width, height } = useWindowDimensions();
@@ -19,7 +20,7 @@ export default function InfoScreen() {
               height={height * 0.25}
               alt="feature_image"
             />
-            <Box h="2700px" justifyContent="flex-end">
+            <Box h="3700px" justifyContent="flex-end">
               <Text ml={4}>Scroll up.</Text>
             </Box>
             <Box

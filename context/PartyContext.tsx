@@ -28,6 +28,8 @@ export const PartyProvider = ({ children }: PartyProviderProps) => {
   );
   const [isLoading, setIsLoading] = useState(true);
 
+  console.log("currentParty:", currentParty);
+
   useEffect(() => {
     const getCurrentParty = async () => {
       const storedParty = await getOfflineCurrentParty();

@@ -1,6 +1,6 @@
 import { Box, Card, HStack, Heading, Image, Text, useTheme } from "native-base";
 import React from "react";
-import { Party } from "../constants/guests";
+import { getAvatar, Party } from "../constants/guests";
 import { TouchableHighlight } from "react-native";
 
 interface Props {
@@ -36,7 +36,7 @@ const PartyCard = ({ party, onPress, selected }: Props) => {
                 <Image
                   key={`${g.id}_avatar`}
                   alt="guest_avatar"
-                  source={g.picture}
+                  source={getAvatar(g.id)}
                   width="50px"
                   height="50px"
                   borderRadius="25px"

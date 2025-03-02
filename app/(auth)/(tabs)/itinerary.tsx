@@ -12,6 +12,7 @@ import CollapsibleSection from "../../../components/CollapsibleSection";
 import { StatusBar } from "expo-status-bar";
 
 import { Link } from "expo-router";
+import React from "react";
 
 export default function ItineraryScreen() {
   const { width, height } = useWindowDimensions();
@@ -372,6 +373,7 @@ export default function ItineraryScreen() {
               </Box>
             </Box>
           </Box>
+          <Box h="500px" />
         </ScrollView>
       </Box>
     </>

@@ -16,7 +16,6 @@ export interface Guest {
   id: number;
   name: string;
   role: string;
-  picture: ImageSourcePropType;
 }
 
 export interface Party {
@@ -25,6 +24,69 @@ export interface Party {
   guests: Guest[];
   cabin: string;
 }
+
+export const getAvatar = (guestId: number) => {
+  switch (guestId) {
+    case 1:
+      return require("../assets/guests/terry.png");
+    case 2:
+      return require("../assets/guests/paulw.png");
+    case 3:
+      return require("../assets/guests/jo.png");
+    case 4:
+      return require("../assets/guests/paulg.png");
+    case 5:
+      return require("../assets/guests/lee.png");
+    case 6:
+      return require("../assets/guests/becky.png");
+    case 7:
+      return require("../assets/guests/dino.png");
+    case 8:
+      return require("../assets/guests/pooh.png");
+    case 9:
+      return require("../assets/guests/cait.png");
+    case 10:
+      return require("../assets/guests/kieran.png");
+    case 11:
+      return require("../assets/guests/calum.png");
+    case 12:
+      return require("../assets/guests/kirstie.png");
+    case 13:
+      return require("../assets/guests/joe.png");
+    case 14:
+      return require("../assets/guests/megan.png");
+    case 15:
+      return require("../assets/guests/dan.png");
+    case 16:
+      return require("../assets/guests/rachel.png");
+    case 17:
+      return require("../assets/guests/jon.png");
+    case 18:
+      return require("../assets/guests/amy.png");
+    case 19:
+      return require("../assets/guests/tom.jpg");
+    case 20:
+      return require("../assets/guests/katey.jpg");
+    case 21:
+      return require("../assets/guests/scooby.jpg");
+    case 22:
+      return require("../assets/guests/henry.jpg");
+    case 23:
+      return require("../assets/guests/leah.png");
+    case 24:
+      return require("../assets/guests/jaimes.png");
+    case 25:
+      return require("../assets/guests/anna.png");
+    case 26:
+      return require("../assets/guests/jamie.png");
+    case 27:
+      return require("../assets/guests/jackjack.png");
+    case 28:
+      return require("../assets/guests/jack.jpg");
+    case 29:
+      return require("../assets/guests/lottie.png");
+  }
+};
 
 export const parties: Party[] = [
   {
@@ -36,13 +98,11 @@ export const parties: Party[] = [
         id: 1,
         name: "Terry",
         role: "Mother of the Groom",
-        picture: require("../assets/guests/terry.png"),
       },
       {
         id: 2,
         name: "Paul",
         role: "Father of the Groom",
-        picture: require("../assets/guests/paulw.png"),
       },
     ],
   },
@@ -55,13 +115,11 @@ export const parties: Party[] = [
         id: 3,
         name: "Jo",
         role: "Mother of the Bride",
-        picture: require("../assets/guests/jo.png"),
       },
       {
         id: 4,
         name: "Paul",
         role: "Father of the Bride",
-        picture: require("../assets/guests/paulg.png"),
       },
     ],
   },
@@ -74,25 +132,21 @@ export const parties: Party[] = [
         id: 5,
         name: "Lee",
         role: "Best Man",
-        picture: require("../assets/guests/lee.png"),
       },
       {
         id: 6,
         name: "Becky",
         role: "Jack's Sister-in-law",
-        picture: require("../assets/guests/becky.png"),
       },
       {
         id: 7,
         name: "Harrison",
         role: "Page Boy",
-        picture: require("../assets/guests/dino.png"),
       },
       {
         id: 8,
         name: "Orla",
         role: "Flower Girl",
-        picture: require("../assets/guests/pooh.png"),
       },
     ],
   },
@@ -105,13 +159,11 @@ export const parties: Party[] = [
         id: 9,
         name: "Cait",
         role: "Maid of Honour",
-        picture: require("../assets/guests/cait.png"),
       },
       {
         id: 10,
         name: "Kieran",
         role: "Cait's Partner",
-        picture: require("../assets/guests/kieran.png"),
       },
     ],
   },
@@ -124,13 +176,11 @@ export const parties: Party[] = [
         id: 11,
         name: "Calum",
         role: "Lottie's Brother",
-        picture: require("../assets/guests/calum.png"),
       },
       {
         id: 12,
         name: "Kirstie",
         role: "Lottie's Sister-in-law",
-        picture: require("../assets/guests/kirstie.png"),
       },
     ],
   },
@@ -143,13 +193,11 @@ export const parties: Party[] = [
         id: 13,
         name: "Joe",
         role: "Lottie's Brother",
-        picture: require("../assets/guests/joe.png"),
       },
       {
         id: 14,
         name: "Megan",
         role: "Joe's Partner",
-        picture: require("../assets/guests/megan.png"),
       },
     ],
   },
@@ -162,13 +210,11 @@ export const parties: Party[] = [
         id: 15,
         name: "Dan",
         role: "Lottie's Brother",
-        picture: require("../assets/guests/dan.png"),
       },
       {
         id: 16,
         name: "Rachel",
         role: "Lottie's Sister-in-law",
-        picture: require("../assets/guests/rachel.png"),
       },
     ],
   },
@@ -181,13 +227,11 @@ export const parties: Party[] = [
         id: 17,
         name: "Jon",
         role: "Lottie's Brother",
-        picture: require("../assets/guests/jon.png"),
       },
       {
         id: 18,
         name: "Amy",
         role: "Lottie's Sister-in-law",
-        picture: require("../assets/guests/amy.png"),
       },
     ],
   },
@@ -200,25 +244,21 @@ export const parties: Party[] = [
         id: 19,
         name: "Tom",
         role: "Jack's Friend",
-        picture: require("../assets/guests/tom.jpg"),
       },
       {
         id: 20,
         name: "Katey",
         role: "Tom's Wife",
-        picture: require("../assets/guests/katey.jpg"),
       },
       {
         id: 21,
         name: "Arthur",
         role: "Tom's Son",
-        picture: require("../assets/guests/scooby.jpg"),
       },
       {
         id: 22,
         name: "Henry",
         role: "Tom's Son",
-        picture: require("../assets/guests/henry.jpg"),
       },
     ],
   },
@@ -231,13 +271,11 @@ export const parties: Party[] = [
         id: 23,
         name: "Leah",
         role: "Lottie's Friend",
-        picture: require("../assets/guests/leah.png"),
       },
       {
         id: 24,
         name: "Jaimes",
         role: "Leah's Fiance",
-        picture: require("../assets/guests/jaimes.png"),
       },
     ],
   },
@@ -250,19 +288,16 @@ export const parties: Party[] = [
         id: 25,
         name: "Anna",
         role: "Lottie's Friend",
-        picture: require("../assets/guests/anna.png"),
       },
       {
         id: 26,
         name: "Jamie",
         role: "Anna's Partner",
-        picture: require("../assets/guests/jamie.png"),
       },
       {
         id: 27,
         name: "Foy",
         role: "Anna & Jamie's Baby",
-        picture: require("../assets/guests/jackjack.png"),
       },
     ],
   },
@@ -275,13 +310,11 @@ export const parties: Party[] = [
         id: 28,
         name: "Jack",
         role: "Groom",
-        picture: require("../assets/guests/jack.jpg"),
       },
       {
         id: 29,
         name: "Lottie",
         role: "Bride",
-        picture: require("../assets/guests/lottie.png"),
       },
     ],
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Guest } from "../constants/guests";
+import { getAvatar, Guest } from "../constants/guests";
 import { Box, Card, HStack, Heading, Image, Text } from "native-base";
 
 interface Props {
@@ -12,7 +12,7 @@ const GuestCard = ({ guest }: Props) => {
       <HStack>
         <Image
           alt="guest_avatar"
-          source={guest.picture}
+          source={getAvatar(guest.id)}
           width="50px"
           height="50px"
           borderRadius="25px"

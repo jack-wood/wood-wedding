@@ -11,7 +11,7 @@ import {
   Text,
 } from "native-base";
 import React, { useEffect, useState } from "react";
-import { Guest } from "../constants/guests";
+import { getAvatar, Guest } from "../constants/guests";
 
 export interface TRSVPGuest {
   id: number;
@@ -64,7 +64,7 @@ export const RSVPGuest = ({ rsvp, index, rsvps, setRSVPs, guest }: Props) => {
         <HStack>
           <Image
             alt="guest_avatar"
-            source={guest.picture}
+            source={getAvatar(guest.id)}
             width="50px"
             height="50px"
             borderRadius="25px"

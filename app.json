@@ -9,7 +9,7 @@
     "scheme": "the-wood-wedding",
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "buildNumber": "17",
+      "buildNumber": "19",
       "supportsTablet": true,
       "bundleIdentifier": "com.jack.wood.thewoodwedding",
       "googleServicesFile": "./GoogleService-Info.plist",
@@ -20,7 +20,7 @@
       }
     },
     "android": {
-      "versionCode": 17,
+      "versionCode": 19,
       "adaptiveIcon": {
         "foregroundImage": "./assets/appIconAdaptive.png",
         "backgroundColor": "#fff9f0"

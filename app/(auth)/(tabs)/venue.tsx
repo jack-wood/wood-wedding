@@ -27,6 +27,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 
 import ImageZoom from "react-native-image-pan-zoom";
+import React from "react";
 
 const FULL_ADDRESS = "Riverside Cabins, Stanwardine Lane, Shrewsbury SY4 1HY";
 
@@ -188,6 +189,7 @@ export default function VenueScreen() {
               </Text>
             </Box>
           </Box>
+          <Box h="500px" />
         </ScrollView>
       </Box>
       {sitemap ? (

@@ -20,6 +20,7 @@ import { useParty } from "../../../context/PartyContext";
 import RSVPModal from "../../../components/RSVPModal";
 import { MainGuest, Party } from "../../../constants/guests";
 import { useRSVP } from "../../../context/RSVPContext";
+import React from "react";
 
 dayjs.extend(relativeTime);
 
@@ -144,6 +145,7 @@ export default function TabOneScreen() {
               </Box>
             </Box>
           </Box>
+          <Box h="500px" />
         </ScrollView>
       </Box>
       {showRSVP ? (

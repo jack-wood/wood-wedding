@@ -17,6 +17,7 @@ import PartyCard from "../components/PartyCard";
 import GuestCard from "../components/GuestCard";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import React from "react";
 
 export default function Welcome() {
   const theme = useTheme();
